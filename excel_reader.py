@@ -32,7 +32,7 @@ def main(file_name):
     """
     df = pd.read_excel(file_name, engine="openpyxl",)
 
-    print(df.to_csv(index=False, sep='|'))
+    print(df.iloc[:,:10].to_csv(index=False, sep='|'))
 
 
 if __name__ == "__main__":
