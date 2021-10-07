@@ -13,7 +13,7 @@ Options:
 
 e.g.
 python excel_reader.py --file_name 'https://github.com/amitsinghpgs/freelancer_amit/blob/main/20210929%20-%20Korian%20-%20Inventaire%20ISIM-Wallix.xlsx?raw=true'
-python excel_reader.py --file_name '20210929 - Korian - Inventaire ISIM-Wallix.xlsx'
+python excel_reader.py --file_name 'folder_name/20210929 - Korian - Inventaire ISIM-Wallix.xlsx'
   """
 import pandas as pd
 import click
@@ -32,7 +32,7 @@ def main(file_name):
     """
     df = pd.read_excel(file_name, engine="openpyxl",)
 
-    print(df.to_csv(index=False))
+    print(df.to_csv(index=False, sep='|'))
 
 
 if __name__ == "__main__":
